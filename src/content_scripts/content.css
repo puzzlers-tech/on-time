@@ -1,0 +1,261 @@
+/* OnTime Extension - Content Script Styles */
+/* Styles for overlays and notifications injected into web pages */
+.ontime-ext-digital-wellbeing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  backdrop-filter: blur(5px);
+}
+.ontime-ext-overlay-content {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.ontime-ext-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.ontime-ext-overlay-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8rem;
+}
+.ontime-ext-close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.ontime-ext-close-btn:hover {
+  background: #f0f0f0;
+}
+.ontime-ext-overlay-body p {
+  margin: 16px 0;
+  color: #666;
+  line-height: 1.6;
+}
+.ontime-ext-overlay-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.ontime-ext-btn-primary,
+.ontime-ext-btn-secondary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ontime-ext-btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+.ontime-ext-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+.ontime-ext-btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 2px solid #e9ecef;
+}
+.ontime-ext-btn-secondary:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+.ontime-ext-break-suggestion {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(40, 167, 69, 0.3);
+  z-index: 999998;
+  max-width: 300px;
+  animation: ontime-ext-slideIn 0.3s ease;
+}
+.ontime-ext-suggestion-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.2rem;
+}
+.ontime-ext-suggestion-content p {
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+.ontime-ext-time-warning {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #fd7e14, #ffc107);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(253, 126, 20, 0.3);
+  z-index: 999998;
+  animation: ontime-ext-slideIn 0.3s ease;
+}
+.ontime-ext-warning-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ontime-ext-warning-content button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.ontime-ext-warning-content button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.ontime-ext-temp-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 999998;
+  animation: ontime-ext-slideUp 0.3s ease;
+}
+@keyframes ontime-ext-slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes ontime-ext-slideUp {
+  from {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+/* FAB Styles */
+.ontime-ext-wellbeing-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999990;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: default;
+}
+.ontime-ext-fab-normal {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+  color: white;
+}
+.ontime-ext-fab-caution {
+  background: linear-gradient(135deg, #ed8936, #dd6b20);
+  color: white;
+}
+.ontime-ext-fab-warning {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+  color: white;
+}
+.ontime-ext-fab-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ontime-ext-fab-icon {
+  font-size: 16px;
+}
+.ontime-ext-fab-countdown {
+  font-size: 14px;
+  font-weight: 600;
+}
+.ontime-ext-fab-dismiss {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.ontime-ext-fab-dismiss:hover {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .ontime-ext-overlay-content {
+    padding: 24px;
+    margin: 20px;
+  }
+  .ontime-ext-overlay-actions {
+    flex-direction: column;
+  }
+  .ontime-ext-break-suggestion {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  .ontime-ext-wellbeing-fab {
+    bottom: 10px;
+    right: 10px;
+  }
+}

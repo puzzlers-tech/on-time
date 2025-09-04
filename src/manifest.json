@@ -1,0 +1,56 @@
+{
+  // Extension manifest configuration for Digital Wellbeing Timer
+  // Defines permissions, scripts, and extension metadata for Chrome browser integration
+
+  "manifest_version": 3,
+  "name": "Digital Wellbeing Timer",
+  "version": "1.0.0",
+  "description": "A Chrome extension to help manage screen time and promote digital wellbeing with per-site timers",
+
+  // Required permissions for extension functionality
+  "permissions": [
+    "storage", // Access Chrome storage for settings and data persistence
+    "tabs", // Monitor active tabs for timer tracking
+    "activeTab", // Access current tab information
+    "alarms", // Schedule break reminders and daily resets
+    "notifications" // Display time limit and break notifications
+  ],
+
+  // Host permissions for content script injection
+  "host_permissions": [
+    "<all_urls>" // Allow content scripts to run on all websites
+  ],
+
+  // Background service worker for persistent functionality
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  // Extension action configuration (toolbar icon)
+  "action": {
+    "default_title": "Digital Wellbeing Timer",
+    "default_popup": "pages/popup/popup.html"
+  },
+
+  // Full page settings interface (Options page)
+  "options_ui": {
+    "page": "pages/options/options.html",
+    "open_in_tab": true
+  },
+
+  // Content scripts for page-level interactions
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], // Run on all websites
+      "js": ["content_scripts/content.js"], // JavaScript for page interactions
+      "css": ["content_scripts/content.css"] // Styles for overlays and notifications
+    }
+  ],
+
+  // Extension icons for different display contexts
+  "icons": {
+    "16": "assets/icons/icon16.png", // Toolbar and extension management
+    "48": "assets/icons/icon48.png", // Extension installation
+    "128": "assets/icons/icon128.png" // Chrome Web Store
+  }
+}

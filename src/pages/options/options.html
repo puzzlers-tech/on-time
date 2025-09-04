@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Wellbeing Timer - Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <!-- Digital Wellbeing Timer - Full Page Settings Interface -->
+  <!-- Provides comprehensive settings management, timer controls, and usage statistics -->
+  <body class="ontime-ext">
+    <!-- Main container for the full page settings interface -->
+    <div class="ontime-ext-container">
+      <!-- Header section with title and real-time clock display -->
+      <header class="ontime-ext-header">
+        <h1>Digital Wellbeing Timer</h1>
+        <div class="ontime-ext-current-time" id="currentTime"></div>
+      </header>
+
+      <!-- Main content area with two columns -->
+      <main class="ontime-ext-main-content">
+        <!-- Left column - Current site and quick actions -->
+        <div class="ontime-ext-left-column">
+          <!-- Current site timer section with progress tracking -->
+          <section class="ontime-ext-current-site">
+            <h2>Current Site</h2>
+            <div class="ontime-ext-site-info" id="currentSiteInfo">
+              <div class="ontime-ext-site-name" id="currentSiteName">Loading...</div>
+              <div class="ontime-ext-timer-display">
+                <span class="ontime-ext-time-spent" id="timeSpent">00:00</span>
+                <span class="ontime-ext-time-limit" id="timeLimit">/ ∞</span>
+              </div>
+            </div>
+            <div class="ontime-ext-progress-bar">
+              <div class="ontime-ext-progress-fill" id="progressFill"></div>
+            </div>
+          </section>
+
+          <!-- Quick actions section for timer control -->
+          <section class="ontime-ext-quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="ontime-ext-actions-grid">
+              <button class="ontime-ext-btn ontime-ext-btn-primary" id="pauseTimer">
+                Pause Timer
+              </button>
+              <button class="ontime-ext-btn ontime-ext-btn-secondary" id="resetTimer">
+                Reset Timer
+              </button>
+            </div>
+          </section>
+
+          <!-- Statistics section showing daily usage metrics -->
+          <section class="ontime-ext-statistics">
+            <h2>Today's Statistics</h2>
+            <div class="ontime-ext-stats-grid">
+              <div class="ontime-ext-stat-item">
+                <span class="ontime-ext-stat-label">Total Time:</span>
+                <span class="ontime-ext-stat-value" id="totalTimeToday">00:00</span>
+              </div>
+              <div class="ontime-ext-stat-item">
+                <span class="ontime-ext-stat-label">Sites Visited:</span>
+                <span class="ontime-ext-stat-value" id="sitesVisited">0</span>
+              </div>
+              <div class="ontime-ext-stat-item">
+                <span class="ontime-ext-stat-label">Breaks Taken:</span>
+                <span class="ontime-ext-stat-value" id="breaksTaken">0</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right column - Settings and site timers -->
+        <div class="ontime-ext-right-column">
+          <!-- Settings section for global timer configuration -->
+          <section class="ontime-ext-settings">
+            <h2>Settings</h2>
+            <div class="ontime-ext-settings-form">
+              <div class="ontime-ext-setting-item">
+                <label for="globalTimeLimit">Global Daily Limit (hours):</label>
+                <input type="number" id="globalTimeLimit" min="0" max="24" step="0.5" value="8" />
+              </div>
+              <div class="ontime-ext-setting-item">
+                <label for="breakReminder">Break Reminder (minutes):</label>
+                <input type="number" id="breakReminder" min="5" max="120" step="5" value="30" />
+              </div>
+              <button class="ontime-ext-btn ontime-ext-btn-save" id="saveSettings">
+                Save Settings
+              </button>
+            </div>
+          </section>
+
+          <!-- Site-specific timers section for individual website limits -->
+          <section class="ontime-ext-site-timers">
+            <h2>Site Timers</h2>
+            <div class="ontime-ext-add-site">
+              <div class="ontime-ext-add-site-inputs">
+                <input type="text" id="newSiteUrl" placeholder="Enter website URL" />
+                <input
+                  type="number"
+                  id="newSiteLimit"
+                  placeholder="Limit (min)"
+                  min="1"
+                  max="1440"
+                />
+              </div>
+              <button class="ontime-ext-btn ontime-ext-btn-add" id="addSiteTimer">
+                Add Site Timer
+              </button>
+            </div>
+            <div class="ontime-ext-sites-list" id="sitesList">
+              <!-- Site timers will be dynamically added here -->
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>

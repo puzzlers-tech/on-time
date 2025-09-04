@@ -33,7 +33,7 @@ A Chrome extension designed to promote digital wellbeing by helping users manage
 ### 🎨 **User-Friendly Interface**
 
 - Clean, modern design
-- Responsive popup interface
+- Full page settings interface
 - Keyboard shortcuts (Ctrl/Cmd + Shift + B for breaks)
 - Dark mode support
 
@@ -72,10 +72,11 @@ A Chrome extension designed to promote digital wellbeing by helping users manage
 
 ### Getting Started
 
-1. **Click the Extension Icon**
+1. **Access Settings**
 
-   - Click the Digital Wellbeing Timer icon in your Chrome toolbar
-   - The popup will show your current site and usage statistics
+   - Right-click the Digital Wellbeing Timer icon in your Chrome toolbar
+   - Select "Options" to open the full settings page
+   - The settings page will show your current site and usage statistics
 
 2. **Configure Global Settings**
 
@@ -118,9 +119,9 @@ A Chrome extension designed to promote digital wellbeing by helping users manage
 ```
 digital-wellbeing-timer/
 ├── manifest.json          # Extension configuration
-├── popup.html            # Main popup interface
-├── popup.css             # Popup styling
-├── popup.js              # Popup functionality
+├── settings.html         # Main settings page interface
+├── settings.css          # Settings page styling
+├── settings.js           # Settings page functionality
 ├── background.js         # Background service worker
 ├── content.js            # Content script for page interactions
 ├── content.css           # Content script styling
@@ -163,7 +164,7 @@ Replace the placeholder icons in the `icons/` directory:
 
 ### **Modifying Styles**
 
-- Edit `popup.css` for popup interface styling
+- Edit `settings.css` for settings page styling
 - Edit `content.css` for page overlay styling
 - All styles support dark mode and accessibility features
 
@@ -171,7 +172,7 @@ Replace the placeholder icons in the `icons/` directory:
 
 - Add new features by modifying the background script
 - Customize notifications in `background.js`
-- Enhance the popup interface in `popup.js`
+- Enhance the settings page interface in `settings.js`
 
 ## Troubleshooting
 
